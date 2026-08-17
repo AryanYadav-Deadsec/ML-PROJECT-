@@ -1,0 +1,25 @@
+{"problem_id": "p001", "title": "two_sum", "description": "Given an array of integers and a target value, return the indices of the two numbers that add up to the target."}
+{"problem_id": "p002", "title": "reverse_string", "description": "Write a function that reverses a string in place."}
+{"problem_id": "p003", "title": "is_palindrome", "description": "Write a function that checks whether a given string is a palindrome, ignoring case and non-alphanumeric characters."}
+{"problem_id": "p004", "title": "fibonacci", "description": "Write a function that returns the nth Fibonacci number using an efficient (non-exponential) approach."}
+{"problem_id": "p005", "title": "binary_search", "description": "Implement binary search over a sorted array of integers, returning the index of the target or -1 if not found."}
+{"problem_id": "p006", "title": "merge_intervals", "description": "Given a list of intervals, merge all overlapping intervals and return the result sorted by start time."}
+{"problem_id": "p007", "title": "linked_list_cycle", "description": "Given the head of a singly linked list, determine whether the list contains a cycle."}
+{"problem_id": "p008", "title": "valid_parentheses", "description": "Write a function that determines if a string of brackets is validly matched and nested."}
+{"problem_id": "p009", "title": "quicksort", "description": "Implement the quicksort algorithm to sort an array of integers in place."}
+{"problem_id": "p010", "title": "word_frequency", "description": "Given a block of text, count the frequency of each word and return the top 5 most frequent words."}
+{"problem_id": "p011", "title": "matrix_transpose", "description": "Write a function that transposes a 2D matrix represented as a list of lists."}
+{"problem_id": "p012", "title": "lru_cache", "description": "Implement a Least Recently Used (LRU) cache with get and put operations in O(1) time."}
+{"problem_id": "p013", "title": "graph_bfs", "description": "Given an adjacency list representation of a graph, implement breadth-first search from a given start node."}
+{"problem_id": "p014", "title": "csv_parser", "description": "Write a simple parser that reads a CSV-formatted string and returns a list of rows, each row a list of fields."}
+{"problem_id": "p015", "title": "prime_sieve", "description": "Implement the Sieve of Eratosthenes to return all prime numbers up to n."}
+{"problem_id": "p016", "title": "anagram_groups", "description": "Given a list of strings, group the strings that are anagrams of each other."}
+{"problem_id": "p017", "title": "json_flatten", "description": "Write a function that flattens a nested dictionary into a single-level dictionary with dotted keys."}
+{"problem_id": "p018", "title": "roman_numeral", "description": "Write a function that converts an integer between 1 and 3999 into a Roman numeral string."}
+{"problem_id": "p019", "title": "stack_queue", "description": "Implement a queue using two stacks, supporting enqueue and dequeue operations."}
+{"problem_id": "p020", "title": "levenshtein_distance", "description": "Implement a function that computes the Levenshtein (edit) distance between two strings."}
+{"problem_id": "p021", "title": "debounce_function", "description": "Implement a debounce higher-order function that delays invoking a callback until after a wait period has elapsed since the last call.", "js_variant": "vanilla"}
+{"problem_id": "p022", "title": "todo_list_component", "description": "Build a simple todo list UI component with add, toggle-complete, and delete functionality.", "js_variant": "frontend_react"}
+{"problem_id": "p023", "title": "rest_api_crud", "description": "Write an Express.js route handler exposing CRUD endpoints for a 'notes' resource backed by an in-memory array.", "js_variant": "backend_node"}
+{"problem_id": "p024", "title": "promise_retry", "description": "Write a function that retries a Promise-returning async operation up to n times with exponential backoff.", "js_variant": "backend_node"}
+{"problem_id": "p025", "title": "form_validation", "description": "Build a controlled form component with client-side validation for an email and password field, showing inline error messages.", "js_variant": "frontend_react"}
