@@ -162,8 +162,8 @@ def get_default_branch_tree(repo_full_name, branch):
     return resp.json().get("tree", [])
 
 
-def is_candidate_path(path, extension):
-    if not path.endswith(f".{extension}"):
+def is_candidate_path(path, extensions):
+    if not any(path.endswith(f".{ext}") for ext in extensions):
         return False
     lower = path.lower()
     return not any(bad in lower for bad in config.EXCLUDE_PATH_SUBSTRINGS)
@@ -247,7 +247,7 @@ def append_metadata(record):
 
 def collect_for_language(language, target_count, cutoff_date, min_stars):
     log.info("Collecting human-written %s samples (target=%d)...", language, target_count)
-    extension = config.EXTENSIONS[language]
+    search_extensions = config.SEARCH_EXTENSIONS[language]
     out_dir = config.HUMAN_DIR / language
 
     already_saved_pairs, saved = load_existing_human_records(language)
@@ -286,7 +286,7 @@ def collect_for_language(language, target_count, cutoff_date, min_stars):
                 tree = get_default_branch_tree(repo_full_name, branch)
                 candidates = [
                     item for item in tree
-                    if item.get("type") == "blob" and is_candidate_path(item["path"], extension)
+                    if item.get("type") == "blob" and is_candidate_path(item["path"], search_extensions)
                 ]
                 # Filter by size using the tree's own metadata BEFORE
                 # spending an API call to download content.
@@ -317,6 +317,10 @@ def collect_for_language(language, target_count, cutoff_date, min_stars):
                     if not (config.MIN_FILE_SIZE_BYTES <= size <= config.MAX_FILE_SIZE_BYTES):
                         continue
 
+                    # Keep the file's real extension (e.g. .cc, .hpp) rather
+                    # than forcing config.EXTENSIONS[language] onto it -- the
+                    # slug already ends in the real path, so this is just
+                    # using that path as-is for the filename.
                     out_path = out_dir / f"{slugify(repo_full_name)}__{slugify(path)}"
                     out_path.write_text(content, encoding="utf-8")
 
