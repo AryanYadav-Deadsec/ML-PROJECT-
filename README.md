@@ -24,7 +24,9 @@ pip install -r requirements.txt
 ### 2. Set credentials
 ```bash
 export GITHUB_TOKEN=ghp_xxxxxxxx        # github.com -> Settings -> Developer settings -> PAT
-export ANTHROPIC_API_KEY=sk-ant-xxxxxxx
+export NVIDIA_API_KEY=sk-ant-xxxxxxx
+export GROQ_API_KEY="gsk_xxxxxx"
+export GEMINI_API_KEY="AQ.Abxxxxxx"
 ```
 `GITHUB_TOKEN` isn't strictly required but without it the GitHub search API
 is capped at 10 requests/minute, which makes collection painfully slow.
